@@ -13,3 +13,6 @@ class TestAsciichPython2Pip(object):
 
     def test_pip_installed(self, docker_container):
         assert b'pip 10.0' in docker_container.check_output('pip --version')
+
+    def test_git_installed(self, docker_container):
+        assert docker_container.exists('git')
